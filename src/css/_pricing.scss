@@ -1,0 +1,115 @@
+.pricing {
+    width: 100%;
+    background-color: $bg-light-blue;
+    &__inner {
+        padding: 73px 0 116px 0;
+    }
+}
+
+.subscription-period {
+    width: 100%;
+    max-width: 280px;
+    margin: 32px auto ;
+    &__item {
+        padding: 2px 11px;
+        border-radius: 3px;
+        color: $blue;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        &:hover {
+            color: #fff;
+            background-color: $blue;
+            transition: .5s;
+        }
+    }
+}
+.pricing__price-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 81px;
+}
+
+.price {
+    width: 100%;
+    max-width: 370px;
+    padding: 39px 35px 59px 35px;
+    text-align: center;
+    cursor: pointer;
+    &__tariff-name {
+        color: $blue;
+        font-weight: 600;
+        font-size: 18px;
+        text-transform: uppercase;
+    }
+    &__tariff-price {
+        color: $blue;
+        margin: 42px 0 63px 0;
+        font-size: 60px;
+        font-weight: 700;
+    }
+    &__tariff-price_period {
+        color: $gray;
+        font-size: 18px;
+        line-height: 14px;       
+    }
+    &__tariff-option-wrapper {
+        margin-bottom: 44px;
+    }
+    &__tariff-option {
+        color: $gray;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 35px;
+    }
+    &__button {
+        color: $blue;
+        padding: 5px 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        text-transform: capitalize;
+        border: 1px solid $blue;
+        border-radius: 3px;
+    }
+    &:hover {
+        background-color: #fff;
+        box-shadow: 0 1px 32px 6px rgba(27, 133, 172, 0.09);
+        transition: .5s;
+        .price__button {
+            color: #fff;
+            background-color: $blue;
+            transition: .5s;
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .pricing__inner {
+        padding: 100px 0;
+    }
+
+    .pricing__price-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price {
+        max-width: 450px;
+        margin-bottom: 50px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width: 380px) {
+    .pricing__inner {
+        padding: 50px 0;
+    }
+
+    .price__tariff-price {
+        font-size: 45px;
+    }
+}

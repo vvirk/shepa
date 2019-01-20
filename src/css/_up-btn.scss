@@ -1,0 +1,47 @@
+.up-btn {
+	display: inline-block;
+	background-color: $gray;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border-radius: 10%;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	transition: background-color .3s, opacity .5s, visibility .5s;
+	opacity: 0;
+	visibility: hidden;
+    z-index: 1000;
+    &::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-size: 70px;
+        line-height: 95px;
+        color: white;
+    }
+    &:hover {
+        background-color: $blue;
+    }
+    &:active {
+        opacity: 1;
+        background-color: $blue;
+    }
+  }
+
+#up-btn-js.show {
+    opacity: .5;
+	visibility: visible;
+}
+
+@media (max-width: 720px) {
+    .up-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 25px;
+        right: 25px;
+        &::after {
+            font-size: 32px;
+            line-height: 47px;
+        }
+      }
+}

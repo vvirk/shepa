@@ -1,0 +1,109 @@
+.header {
+    width: 100%;
+}
+
+.header__inner {
+    padding: 26px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.logo:hover {
+    opacity: .6;
+    transition: .6s;
+}
+
+.logo__img {
+    max-width: 250px;
+    max-height: 50px;
+}
+
+.menu-toggle,
+.mobile-menu {
+    display: none;
+}
+
+.menu {
+    width: 100%;
+    max-width: 567px;
+    display: flex;
+    justify-content: space-between;
+    &__link {
+        color: $link-black;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        &:hover {
+            transition: .5s;
+            color: $blue;
+            transform: translateY(-3px);
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .menu {
+        display: none;
+    }
+    
+    .header__inner {
+        align-items: center;
+        position: relative;
+        z-index: 999;
+    }
+
+    //mobile menu
+    .menu-toggle {
+		display: block;
+        cursor: pointer;
+        &__line {
+            width: 30px;
+		    height: 2px;
+		    margin-bottom: 10px;
+		    background-color: $blue;
+	        &:last-child {
+            margin: 0;
+            }
+        }
+        &:hover {
+            transform: rotate(360deg);
+            transition: 1s;
+        }
+    }
+
+    .mobile-menu{
+        position: fixed;
+		width: 100%;
+        height: 100vh;
+        padding-top: 78px;
+        top: 0;
+        left: 0;
+        background-color: $bg-light-blue;
+        z-index: 99;
+		text-align: center;
+		transform: translate(0, -999%);
+        transition: all 0.2s ease-in-out;
+        &__link {
+            color: $black;
+		    display: block;
+            padding: 15px 20px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+	        &:hover {
+		    color: $blue;
+            transition: .5s;
+            transform: scale(1.1);
+            }
+        }
+	}
+
+	.menu-toggle_active {
+        display: block;
+		transform: translate(0, 0);
+		transition: all 0.2s ease-in-out;
+	}
+}
